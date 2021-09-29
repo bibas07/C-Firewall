@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="login-wrapper">
+    <div class="form">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{form|crispy}}
+    <button type="submit" class="submit-btn">Sign In</button>
+</form><br/>
+<a href="{% url 'password_reset' %}" class="forgot-pw"> Forgot Password? </a> | <a href="{% url 'signup'%}" class="forgot-pw"> Create an Account </a>
+</div></div>
+{% endblock %}
