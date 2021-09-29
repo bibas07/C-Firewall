@@ -1,0 +1,56 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load static %}
+    <div class="section_one">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{% static 'images/ssh_image.jpg' %}" class="rounded float-left" alt = "ssh_image" />
+                </div>
+                <div class="col-md-6">
+                    <h1> Start SSH </h1>
+                    <p> SSH is known as Secure Shell an upgraded version of Telnet with differet features like encryption and password protection</p>         
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section_two">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1> Port Scanning </h1>
+                    <p> Port Scanning tool scans the ports against an IP address or a domain. A port in networking is a term used to identify the service to which an incoming packet is to be forwarded.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="{% static 'images/port-scanning.png' %}" class="rounded float-right" alt = "Port Scanning" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section_three">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{% static 'images/net_scanner.png' %}" class="rounded float-left" alt = "Network Scanner" />
+                </div>
+                <div class="col-md-6">
+                    <h1> Network Scanning </h1>
+                    <p>Check your network’s security rigorously and regularly. <br />Network scanning involves network port scanning and vulnerability scanning.</p>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div class="section_four">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1> Apache </h1> 
+                    <p>Apache is a popular open-source, cross-platform web server that is, by the numbers, the most popular web server in existence.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="{% static 'images/apache.svg' %}" class="rounded float-right" alt = "Apache " />
+                </div>
+            </div>
+        </div>      
+    </div>
+{%endblock%}

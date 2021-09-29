@@ -1,0 +1,62 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<div class="container port-box">
+    <div class="row">
+        <div class="col-sm-8">
+            <form method="POST">
+            {% csrf_token %}
+            {{form |crispy}}
+            <button type="submit" class="btn btn-dark" name="port-allow">Allow </button> 
+            <button type="submit" class="btn btn-dark" name="port-deny">Deny </button>
+            <a href="{% url 'port-enable'%}" class=" btn btn-dark">Enable</a>
+            <a href="{% url 'port-reset'%}" class=" btn btn-dark">Reset</a>
+            <a href="{% url 'port-disable'%}" class=" btn btn-dark">Disable</a>
+            
+</form> <br />
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }}">
+{{message}}
+</div>
+{% endfor %}
+</div>
+<div class="colo-sm-4">
+    <h2 class="text-center"><b> Guidlines </b></h2>
+    <p> First make sure you have installed <br />"ufw" in your linux machine or type <br />  in a system terminal:
+    <div style="background-color:beige; color: black;height: 50px; width: 90%; padding:10px;box-sizing: border-box; margin: 5px;"> apt-get install ufw </div>
+    </p>
+
+</div></div>
+</div>
+<div class="container"> 
+    <div class="banner"><h2>Run service on one click </h2></div>
+    <div class="row">
+        <div class="col-md-4 small-tool-box"><h5>SSH</h5>
+            <img src="{% static 'images/ssh_image.jpg' %}" alt = "Secure Shell" class="img-thumbnail" /> <br /><br />
+            <a href="{% url 'post-scan-start'%}"> <div class="small-tool-btn2">Start</div></a>
+            <a href="{% url 'post-scan-status'%}"> <div class="small-tool-btn2">Status</div></a>
+            <a href="{% url 'post-scan-stop'%}"> <div class="small-tool-btn2">Stop</div></a>
+        </div>
+        <div class="col-md-4 small-tool-box"><h5>MySQL</h5>
+            <img src="{% static 'images/mysql.jpg' %}" alt = "MySQL" class="img-thumbnail" /> <br /><br />
+            <a href="{% url 'mysql-start'%}"> <div class="small-tool-btn2">Start</div></a>
+            <a href="{% url 'mysql-status'%}"><div class="small-tool-btn2">Status</div></a>
+            <a href="{% url 'mysql-stop'%}"> <div class="small-tool-btn2">Stop </div></a>
+        </div>
+        <div class="col-md-4 small-tool-box"><h5>Apache Web Server</h5>
+            <img src="{% static 'images/apache.svg' %}" alt = "Apache Web Server" class="img-thumbnail" /> <br /><br />
+            <a href="{% url 'apache-server-start'%}"> <div class="small-tool-btn2">Start</div></a>
+            <a href="{% url 'apache-server-status'%}"> <div class="small-tool-btn2">Status</div></a>
+            <a href="{% url 'apache-server-stop'%}"> <div class="small-tool-btn2">Stop</div></a>
+        </div></div>
+    <div class="row">
+        <div class="col-md-4 small-tool-box"><h5>Telnet</h5>
+            <img src="{% static 'images/telnet.jpg' %}" alt = "Telnet" class="img-thumbnail" /> <br /><br />
+            <a href="{% url 'telnet-start'%}"> <div class="small-tool-btn2">Start</div></a>
+            <a href="{% url 'telnet-status'%}"><div class="small-tool-btn2">Status</div></a>
+            <a href="{% url 'telnet-stop'%}"> <div class="small-tool-btn2">Stop</div></a>
+        </div></div>   
+</div>
+{% endblock %}

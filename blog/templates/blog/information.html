@@ -1,0 +1,45 @@
+{% extends 'blog/base.html' %}
+{% block title %}
+System Information
+{% endblock %}
+{% block content %}
+<div class="container-fluid port-box">
+<div class="row">
+    <div class="col-md-4">
+        <div class="left-side-box">
+            <h2> System Information</h2><hr />
+            System: <b>{{uname.system}}</b><br />
+            Node Name:<b>{{uname.node}}</b><br />
+            Release:<b>{{uname.release}}</b><br />
+            Version:<b>{{uname.version}}</b><br />
+            Machine: <b>{{uname.machine}}</b><br />
+            Boot Time: <b> {{boot_time.year}}/{{boot_time.month}}/{{boot_time.day}}</b>
+        </div>
+<br /><br />
+        <div class="left-side-box">
+            <h2> CPU Information</h2><hr />
+            Physical Core: <b>{{physical_core}}</b><br />
+            Total Core:<b>{{total_core}}</b><br />
+            Max Frequency:<b>{{cpufreq.max}} Mhz</b><br />
+            Min Frequency:<b>{{cpufreq.min}} Mhz</b><br />
+            Current Frequency: <b>{{cpufreq.current}} Mhz</b><br />
+        </div>
+<br /><br />
+        <div class="left-side-box">
+            <h2> Memory Information </h2>
+            Total: {{meminfo.total}} <br />
+            Available: {{meminfo.available}} <br />
+            Percentage: {{meminfo.percent}} <br />
+            Used: {{meminfo.used}} <br />
+            Free: {{meminfo.free}}<br />
+            Cached: {{meminfo.cached}}<br />
+           
+
+        </div>
+    </div>
+    <div class="col-md-8">
+      
+    </div>
+</div>
+</div>
+{% endblock %}

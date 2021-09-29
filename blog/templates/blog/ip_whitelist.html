@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% block title %} IP Whitelist {% endblock %}
+{% block content %}
+<div class="container port-box">
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit" class="btn btn-dark"> Whitelist </button>
+</form>
+<br/>
+{% if messages%}
+{% for message in messages%}
+<div class="alert alert-{{ message.tags }}">
+{{message}}
+</div>
+{%endfor%}
+{% endif %}
+{% if output%}
+{% for o in output%}
+{{o}}
+{% endfor %}
+{% endif %}
+</div>
+{% endblock %}

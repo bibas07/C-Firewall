@@ -1,0 +1,7 @@
+{% extends 'blog/base.html' %}
+{% block title %} Connected Devices {% endblock %}
+{% block content %}
+{% for client in clients %}
+{{client_ip}} {{client_mac}} <hr/>
+{% endfor %}
+{% endblock %}

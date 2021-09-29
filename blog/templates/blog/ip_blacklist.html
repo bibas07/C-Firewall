@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% block title %} IP Blacklist {% endblock %}
+{% block content %}
+<div class="container port-box">
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit" class="btn btn-dark"> Blacklist </button>
+</form> <a href="{% url 'ip-blacklist-logs'%}"> [Activity Logs]</a>
+<br/>
+{% if messages%}
+{% for message in messages%}
+<div class="alert alert-{{ message.tags }}">
+{{message}}
+</div>
+{%endfor%}
+{% endif %}
+
+{% if blacklisted %}
+{% for blacklist in blacklisted %}
+<hr />
+{{blacklist.user}}
+{{blacklist.ip_address}}
+{% endfor %}
+{% endif %}
+</div>
+{% endblock %}

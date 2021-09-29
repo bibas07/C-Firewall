@@ -1,0 +1,48 @@
+{% extends 'blog/base.html' %}
+{% block title%} Maltrail {% endblock %}
+{% block content %}
+<div class="container port-box">        
+        <!-- <div class="col-md-4">
+            <a href="{% url 'maltrail-server' %}">
+            <h3> maltrail server</h3>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="{% url 'maltrail-sensor' %}">
+                <h3> maltrail sensor </h3>
+                </a> </div> -->
+            <div class="row"> <div class="col-md-4">
+                <a href="{% url 'run-superuser'%}" class=" btn large-btn" target="_blank">Run as ROOT</a>
+            </div>
+            <div class="col-md-8">
+                <h2>Run as a ROOT</h2><p> - Before starting maltrail, you need to give <b>root</b> permission to the system</p>
+            </div> </div>
+            <div class="row">
+            <div class="col-md-4">
+                <a href="{% url 'maltrail-server'%}" class=" btn large-btn" target="_blank">Start Maltrail </a>
+            </div>
+            <div class="col-md-8"><h2>Start a Maltrail </h2> <p> - This will run server of maltrail <br /> - In case if maltrail is running, you will be automatically redirect to the the homepage. <br /> - If not you need to open manually.</p></div>
+            <!-- <div class="col-md-4">
+                <a href="{% url 'maltrail-sensor'%}" class=" btn btn-dark"target="_blank">Maltrail Sensor</a>
+            </div> -->
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="{% url 'maltrail-sensor'%}" class=" btn large-btn" target="_blank">Start Maltrail Sensor </a>
+            </div>
+            <div class="col-md-8"><h2>Start a Maltrail Sensor </h2> <p> - This will run sensor for handling network traffic <br /> - In case if maltrail is running, you will be automatically redirect to the the homepage. <br /> - If not you need to open manually.</p></div>
+            <!-- <div class="col-md-4">
+                <a href="{% url 'maltrail-sensor'%}" class=" btn btn-dark"target="_blank">Maltrail Sensor</a>
+            </div> -->
+        </div>
+            <div class="row">
+                <div class="col-md-4">     
+                <a href="http://0.0.0.0:8338/" class="btn large-btn" target="_blank">Open In Web Browser</a>
+                </div>
+                <div class="col-md-8"><h2>Open in a new Web</h2><p> - If the program does not redirect itself, you can click on the button to open in a new tab</p></div>
+            </div>
+        
+    </div>
+</div>
+{% endblock %}

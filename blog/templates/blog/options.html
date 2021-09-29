@@ -1,0 +1,77 @@
+{% extends 'blog/base.html' %}
+{% block title%} Options {% endblock %}
+{% block content %}
+<div class="container port-box">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{message.tags}}">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{% url 'connected-devices' %}">
+                <div class="option-box">
+                    <h3> Connected Devices</h3>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6"><h4>Requires Permission</h4>
+            <p> - This will shows connected devices on the network</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{% url 'load-balancer' %}" target="_blank"">
+                <div class="option-box">
+                    <h3> Load Balancer </h3>
+                </div>
+            </a>
+        </div>
+            <div class="col-md-6"><h4>Automatic Ready for client</h4>
+                <p> - After click on <b>load balancer</b>. It will be ready for client</p>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{% url 'system-information' %}">
+                <div class="option-box">
+                    <h3> System Information </h3>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6">
+            Shows the information of your system
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{% url 'ip-blacklist-form' %}">
+                <div class="option-box">
+                    <h3> IP Blacklist </h3>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6">
+            Blacklist the ip addresses. This will allows to monitor ip addresses with extra filtration.
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{% url 'ip-whitelist-form'%}">
+                <div class="option-box">
+                    <h3> IP Whitelist </h3>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6">
+            Whitelist the ip addresses. This will accept every incoming packets.
+        </div>
+
+    </div>
+</div>
+{% endblock %}

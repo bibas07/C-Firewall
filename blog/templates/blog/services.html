@@ -1,0 +1,53 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}}"> 
+    {{message}}
+</div>
+{% endfor %}
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"><div class="small-tool-box small-image-box">
+           
+            <img src="{% static 'images/ddos.png' %}" alt = "DDoS Detection" class="rounderd" />  <h3>DDOS Detection</h3>
+            
+            <a href="{% url 'ddos-detection'%}"><div class="small-tool-btn"><p>Start</p></div></a>
+        </div></div>
+        <div class="col-md-4"><div class="small-tool-box small-image-box">
+            
+            <img src="{% static 'images/port-scanning.png' %}" alt = "Port Scanner" class="rounderd" /> <h3>Port Scanning</h3>
+
+            <a href="{% url 'port-scanner' %}"><div class="small-tool-btn"><p>Start</p></div></a>
+        </div></div>
+        <div class="col-md-4"><div class="small-tool-box small-image-box">
+            
+            <img src="{% static 'images/dns-scanning.jpg' %}" alt = "Secure Shell" class="rounderd" /> <h3>DNS Scanning</h3>
+
+            <a href="{% url 'dns-scanning' %}"><div class="small-tool-btn"><p>Start</p></div></a>
+        </div></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"><div class="small-tool-box small-image-box">
+            
+            <img src="{% static 'images/ip-scanning.jpg' %}" alt = "IP Scanner" class="rounderd" /> <h3>IP Scanning</h3>
+            <a href="{% url 'ip-scanning' %}"><div class="small-tool-btn"><p>Start</p></div></a>
+        </div></div>
+        <div class="col-md-4"><div class="small-tool-box small-image-box">
+            
+            <img src="{% static 'images/packet-capture.webp' %}" alt = "Packet Capture" class="rounderd" /> <h3>Packet Capture</h3>
+
+            <a href="{% url 'packet-capture' %}"><div class="small-tool-btn"><p>Start</p></div></a>
+        </div></div>
+        <div class="col-md-4"><div class="small-tool-box small-image-box">
+            
+                <img src="{% static 'images/net_scanner.png' %}" alt = "Network Scanner" class="rounderd" /> <h3>Network Scanner</h3>
+                
+                <a href="{% url 'network-scanner' %}"><div class="small-tool-btn"><p>Start</p></div></a>
+            </div></div>
+        <div class="col-md-4"></div>
+    </div>
+
+</div>
+{% endblock %}
