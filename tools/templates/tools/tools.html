@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 small-tool-box"><h5>SSH</h5>
+            <img src="{% static 'images/ssh_image.jpg' %}" alt = "Secure Shell" class="img-thumbnail" /> <br /><br />
+            <a href="{% url 'post-scan-start'%}"> <div class="small-tool-btn2">Start</div></a>
+            <a href="{% url 'post-scan-status'%}"> <div class="small-tool-btn2">Status</div></a>
+            <a href="{% url 'post-scan-stop'%}"> <div class="small-tool-btn2">Stop</div></a>
+        </div>
+        <div class="col-md-4 small-tool-box"><h5>MySQL</h5>
+            <img src="{% static 'images/mysql.jpg' %}" alt = "MySQL" class="img-thumbnail" /> <br /><br />
+            <a href="{% url 'mysql-start'%}"> <div class="small-tool-btn2">Start</div></a>
+            <a href="{% url 'mysql-status'%}"><div class="small-tool-btn2">Status</div></a>
+            <a href="{% url 'mysql-stop'%}"> <div class="small-tool-btn2">Stop </div></a>
+        </div>
+        <div class="col-md-4 small-tool-box"><h5>Apache Web Server</h5>
+            <img src="{% static 'images/apache.svg' %}" alt = "Apache Web Server" class="img-thumbnail" /> <br /><br />
+            <a href="{% url 'apache-server-start'%}"> <div class="small-tool-btn2">Start</div></a>
+            <a href="{% url 'apache-server-status'%}"> <div class="small-tool-btn2">Status</div></a>
+            <a href="{% url 'apache-server-stop'%}"> <div class="small-tool-btn2">Stop</div></a>
+        </div></div>
+    <div class="row">
+        <div class="col-md-4 small-tool-box"><h5>Telnet</h5>
+            <img src="{% static 'images/telnet.jpg' %}" alt = "Telnet" class="img-thumbnail" /> <br /><br />
+            <a href="{% url 'telnet-start'%}"> <div class="small-tool-btn2">Start</div></a>
+            <a href="{% url 'telnet-status'%}"><div class="small-tool-btn2">Status</div></a>
+            <a href="{% url 'telnet-stop'%}"> <div class="small-tool-btn2">Stop</div></a>
+        </div></div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+{% if text %}
+{% for txt in text %}
+<div class="alert alert-info }}">
+{{txt}}
+</div>
+{% endfor %}
+{% endif %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 small-tool-box"><h5>Apache Web Server</h5>
+            <img src="{% static 'images/apache.svg' %}" alt = "Apache Web Server" class="img-thumbnail" /> <br /><br />
+            <a href="{% url 'apache-server-start'%}"> <div class="small-tool-btn2">Start</div></a>
+            <a href="{% url 'apache-server-status'%}"> <div class="small-tool-btn2">Status</div></a>
+            <a href="{% url 'apache-server-stop'%}"> <div class="small-tool-btn2">Stop</div></a>
+        </div>
+    </div>
+</div>
+{% endblock %}

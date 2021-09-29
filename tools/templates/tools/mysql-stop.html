@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }}">
+{{message}}
+</div>
+{% endfor %}
+{% endif %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 small-tool-box"><h5>MySQL</h5>
+            <img src="{% static 'images/mysql.jpg' %}" alt = "MySQL" class="img-thumbnail" /> <br /><br />
+            <a href="{% url 'mysql-start'%}"> <div class="small-tool-btn2">Start</div></a>
+            <a href="{% url 'mysql-status'%}"><div class="small-tool-btn2">Status</div></a>
+            <a href="{% url 'mysql-stop'%}"> <div class="small-tool-btn2">Stop </div></a>
+        </div>
+    </div>
+</div>
+{% endblock %}

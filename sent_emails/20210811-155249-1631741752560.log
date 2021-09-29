@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: koeralabibas@gmail.com
+Date: Wed, 11 Aug 2021 10:07:49 -0000
+Message-ID: <162867646974.20116.16585661249945238157@Bibas-PC>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+<a href="http://127.0.0.1:8000/users/reset/MTM/ar8441-d04f9421f7ce68209162a119956d2ceb/"> Click Here </a>
+
+Your username, in case you’ve forgotten: new_account2
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

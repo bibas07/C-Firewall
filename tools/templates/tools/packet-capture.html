@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+{% for packet in packets %}
+<div class="alert alert-{{message.tags}}">
+    {{packet}}
+</div>
+{% endfor %}
+{% endblock %}

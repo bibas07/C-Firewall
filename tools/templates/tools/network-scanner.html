@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+{% block title %} Network Scanner {% endblock %}
+{% block content%}
+<div class="container port-box">
+    <h1 style="color: rgb(211, 39, 39); text-align: center;"> Your Information </h1>
+    <h3 style= 'text-align: center';>Host IP Address: <b>{{context.host_ip}}</b><br /> Host Name: <b>{{context.host_name}}</b></h3>
+
+
+    <div class="left-side-box" style="overflow: scroll;">
+        {% if context.result %}
+        {%for res in context.result%}
+        {{res}} <hr/>
+        {% endfor %}
+        {% endif%}
+
+        <!-- {% if context.error %}
+        {%for err in context.error%}
+        {{err}} <hr/>
+        {% endfor %}
+        {% endif%} -->
+
+        
+
+    </div><br />
+    <hr/>
+    <!-- {% if context.result_status %}
+        {%for status in context.result_status%}
+        {{status}} <hr/>
+        {% endfor %}
+        {% endif%} -->
+</div>
+{% endblock %}
